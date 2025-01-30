@@ -1,22 +1,41 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nexus das Sombras - Jogo</title>
-    <link rel="stylesheet" href="../BackEnd/style.css">
+    <link rel="stylesheet" href="style.css"> <!-- Usar o mesmo CSS da tela de instruções -->
 </head>
+
 <body>
     <div class="container">
-        <h1>Nexus das Sombras</h1>
+        <!-- Placar -->
         <div id="placar">
             <p>Turnos Vencidos: <span id="turnos-jogador">0</span> x <span id="turnos-oponente">0</span></p>
         </div>
-        <div id="cartas-jogador">
+
+        <!-- Cartas do Oponente -->
+        <div id="cartas-oponente" class="area-cartas">
+            <!-- Cartas do oponente serão inseridas aqui via JavaScript -->
+        </div>
+
+        <!-- Cartas do Jogador -->
+        <div id="cartas-jogador" class="area-cartas">
             <!-- Cartas do jogador serão inseridas aqui via JavaScript -->
         </div>
-        <button id="btn-jogar">Jogar Carta</button>
+
+        <!-- Botões de Ação -->
+        <div class="botoes-container">
+            <button id="btn-atacar">Atacar</button>
+            <button id="btn-defender">Defender</button>
+            <button id="btn-magia">Magia</button>
+        </div>
+
+
+
+
     </div>
-    <script src="../BackEnd/jogo.js"></script> <!-- Lógica do jogo -->
 </body>
+
 </html>

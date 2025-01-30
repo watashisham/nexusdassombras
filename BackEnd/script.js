@@ -6,20 +6,46 @@ let textos = [
 
 let indiceTexto = 0; // Inicia com o primeiro texto
 
-document.getElementById('btn-avancar').addEventListener('click', function() {
-    let caixaTexto = document.getElementById('caixa-texto');
+// Função para exibir o texto atual
+function exibirTexto() {
     let instrucoes = document.getElementById('instrucoes');
+    instrucoes.innerHTML = textos[indiceTexto];
+}
 
-    // Se houver mais instruções, exibe a próxima
-    if (indiceTexto < textos.length) {
-        instrucoes.innerHTML = textos[indiceTexto];
-        indiceTexto++; // Avança para o próximo texto
-    }
-
-    // Animação de transição
+// Função para animação de transição
+function animarCaixaTexto() {
+    let caixaTexto = document.getElementById('caixa-texto');
     caixaTexto.style.transform = "scale(0.5)";
-    
-    setTimeout(function() {
+    setTimeout(function () {
         caixaTexto.style.transform = "scale(1)";
     }, 1000);
+}
+
+// Botão "Avançar"
+document.getElementById('btn-avancar').addEventListener('click', function () {
+    // Verifica se chegou ao final da lista de textos
+    if (indiceTexto >= textos.length - 1) {
+        window.location.href = "jogo.html"; // Redireciona para a tela do jogo
+        return; // Interrompe a execução do restante do código
+    }
+
+    // Avança para o próximo texto
+    indiceTexto++;
+    exibirTexto();
+    animarCaixaTexto();
 });
+
+// Botão "Voltar"
+document.getElementById('btn-voltar').addEventListener('click', function () {
+    // Volta para o texto anterior
+    if (indiceTexto > 0) {
+        indiceTexto--;
+    } else {
+        indiceTexto = textos.length - 1; // Volta para o último texto se estiver no primeiro
+    }
+
+    exibirTexto();
+    animarCaixaTexto();
+});
+
+// Não exibe o primeiro texto ao carregar a página (mantém a mensagem inicial do HTML)

@@ -39,18 +39,29 @@ body {
     transition: transform 1s ease-in-out;
 }
 
+/* Estilo dos botões */
 button {
-    background-color: #016b43;
+    background-color: #016b429f; /* Cor de fundo */
     border: none;
-    color: white;
-    padding: 10px 20px;
+    color: white; /* Cor do texto */
+    padding: 8px 16px; /* Tamanho menor */
     cursor: pointer;
-    margin-top: 20px;
-    font-size: 16px;
+    font-size: 14px; /* Fonte menor */
     border-radius: 5px;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, opacity 0.3s;
+    opacity: 0.8; /* Transparência */
 }
 
+/* Efeito ao passar o mouse */
 button:hover {
     background-color: #3CB371; /* Mudando a cor do botão no hover */
+    opacity: 1; /* Remove a transparência ao passar o mouse */
+}
+
+/* Container dos botões */
+.botoes-container {
+    display: flex;
+    justify-content: space-between; /* Alinha os botões nas extremidades */
+    width: 100%; /* Ocupa toda a largura da caixa de texto */
+    margin-top: 20px; /* Espaço acima dos botões */
 }

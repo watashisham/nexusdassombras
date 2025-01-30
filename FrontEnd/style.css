@@ -6,7 +6,7 @@
 }
 
 body {
-    background-color: #000000;
+    background-color: #161824;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -18,17 +18,24 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column; /* Organizando a logo e a caixa de texto na vertical */
     height: 100%;
 }
 
+.logo {
+    width: 350px; /* Ajuste o tamanho da logo conforme necessário */
+    margin-bottom: 20px; /* Espaço entre a logo e a caixa de texto */
+}
+
 .caixa-texto {
+    font-size: 1.5em;
     background-color: rgba(255, 255, 255, 0.178); /* Fundo branco com transparência */
     border: 2px solid #00FA9A; /* Borda verde */
     padding: 20px;
     text-align: center;
-    color: #3CB371; /* Texto verde */
+    color: #ffffff; /* Texto verde */
     width: 80%;
-    max-width: 500px;
+    max-width: 800px;
     transition: transform 1s ease-in-out;
 }
 

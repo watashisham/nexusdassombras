@@ -49,3 +49,14 @@ document.getElementById('btn-voltar').addEventListener('click', function () {
 });
 
 // Não exibe o primeiro texto ao carregar a página (mantém a mensagem inicial do HTML)
+
+//Controle do audio da página
+window.addEventListener("DOMContentLoaded", function () {
+    let musica = document.getElementById("musica-fundo");
+
+    // Inicia a música após uma interação do usuário (necessário para alguns navegadores)
+    document.body.addEventListener("click", function iniciarMusica() {
+        musica.play().catch(error => console.log("Erro ao reproduzir áudio:", error));
+        document.body.removeEventListener("click", iniciarMusica);
+    });
+});

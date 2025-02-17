@@ -28,6 +28,7 @@ body {
 }
 
 .caixa-texto {
+    font-family: 'IM Fell English', serif;
     font-size: 1.5em;
     background-color: rgba(255, 255, 255, 0.178); /* Fundo branco com transparência */
     border: 2px solid #00FA9A; /* Borda verde */
